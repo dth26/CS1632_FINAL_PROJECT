@@ -1,0 +1,12 @@
+Difficulties
+-----------
+get() method throws exception IndexOutOfBoundsException if the list does not contain the element. Luckily,
+junit provides a functionality to test that a exception is thrown
+
+
+writing tests for code in TDD. It was sometimes difficult in envisioning every possible scenario
+that we would have to test for while writing the tests. Without writing any actual code for the methods
+I seemed to neglect some error handling cases within the methods that I would need to test for. For
+instance I wrote the test methods for the remove function covering all possible cases. However, while writing
+the code I realized that if I removed the first element in the list would be handled differently than
+removing an element in the middle of the list.
