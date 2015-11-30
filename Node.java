@@ -11,6 +11,10 @@ public class Node<T> {
 		return next;
 	}
 	
+	public boolean hasNext(){
+		return !(next==null);
+	}
+	
 	public void setNext(Node next){
 		this.next = next;
 	}

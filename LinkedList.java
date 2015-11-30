@@ -163,6 +163,41 @@ public class LinkedList<T>{
 	}
 	
 	
+	public void addAtIndex(T val, int index){
+		Node next = root, before = null;
+		Node newNode = new Node(val);
+		
+		
+		if(index==0){
+			
+			if(next.hasNext()){
+				next = next.getNext();
+				root = newNode;
+				root.setNext(next);
+			}else{
+				root = newNode;
+			}
+		
+			
+		}else if( index==size()-1){
+			
+			Node last = getLast();
+			last.setNext(newNode);
+			
+		}else{
+			
+			for(int i=0; i<index; i++){
+				before = next;
+				next = next.getNext();
+			}
+			
+			newNode.setNext(next);
+			before.setNext(newNode);
+		}
+		
+
+	}
+	
 	
 	public Object get(int index){
 		
