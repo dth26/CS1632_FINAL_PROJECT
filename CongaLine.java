@@ -39,7 +39,7 @@ public class CongaLine {
 
 	
 	/*
-	 * 	Get the person whose hips are being help by personA
+	 * 	Return name of person whose hips are being held by personA
 	 * */
 	public String holdingHipsOf(String personA){
 		String partner = "";
