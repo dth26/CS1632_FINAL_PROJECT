@@ -3,14 +3,6 @@ public class CongaLine {
 	private LinkedList<String> line= new LinkedList<String>();
 	
 	
-	/*
-	 * 	Make personA hold the hips of personB
-	 * 
-	 * */
-//	public void switchHips(String personA, String personB){
-//		
-//	}
-	
 	
 	/*
 	 * 	Remove person from the conga line
@@ -31,10 +23,24 @@ public class CongaLine {
 	 * 	Add a person to the conga line
 	 *  so that newPerson should now hold the hips of partner
 	 * */
-	public void enterBehind(String newPerson, String partner){
+	public boolean enterBehind(String newPerson, String partner){
+		boolean success;
 		
-		int positionOfpartner = line.indexOf(partner);
-		line.addAtIndex(newPerson, positionOfpartner);
+		if(newPerson == "" || partner =="" || newPerson==null || partner==null){
+			success = false;
+		}else{
+			success = true;
+			int positionOfpartner = line.indexOf(partner);
+			
+			if(positionOfpartner==-1){
+				success = false;
+			}else{
+				line.addAtIndex(newPerson, positionOfpartner);
+			}
+		}
+		
+		return success;
+
 	}
 
 	
@@ -46,8 +52,8 @@ public class CongaLine {
 		
 		int positionOfPersonA = line.indexOf(personA);
 		int positionOfPartner = positionOfPersonA + 1;
-		
-		if(positionOfPartner >= line.size()){
+
+		if((positionOfPartner >= line.size()) || positionOfPersonA==-1){
 			partner = "No Partner!";
 		}else{
 			partner = (String)line.get(positionOfPartner);
@@ -57,11 +63,18 @@ public class CongaLine {
 	}
 	
 	/*
-	 *  Reverse everyone's position so that each person is now holding
-	 *  the hips of of the person that was holding their hips
+	 * 	Print line
+	*/
+	public String seeLine(){
+		String lineSequence = line.printList();
+		return lineSequence;
+	}
+	
+	/*
+	 * 	Get number of people in conga line
 	 * */
-	public void reverse(){
-		
+	public int lineSize(){
+		return line.size();
 	}
 	
 }

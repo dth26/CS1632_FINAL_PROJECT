@@ -15,15 +15,30 @@ public class LinkedList<T>{
 	
 	
 	
-	public void printList(){
+	public String printList(){
 		Node<T> curr = root;
+		StringBuilder result = new StringBuilder();
 		
 		if(curr!=null){
 			do{
-				System.out.print(curr.getVal() + "->");
+				result.append(curr.getVal());
+				System.out.print(curr.getVal());
+				
+				if(curr.hasNext()){
+					result.append(" -> ");
+					System.out.print(" -> ");
+				}
+				
+					
 				curr = curr.getNext();
+				
 			}while(curr!=null);
 		}
+		
+		System.out.println();
+		System.out.println();
+		
+		return result.toString();
 	}
 	
 	
@@ -117,6 +132,7 @@ public class LinkedList<T>{
 		int index = 0;
 		Node curr = root;
 		
+		
 		if(curr!=null){
 			do{
 				
@@ -169,20 +185,23 @@ public class LinkedList<T>{
 		
 		
 		if(index==0){
-			
-			if(next.hasNext()){
-				next = next.getNext();
-				root = newNode;
-				root.setNext(next);
-			}else{
-				root = newNode;
-			}
+			root = newNode;
+			root.setNext(next);
 		
 			
 		}else if( index==size()-1){
 			
-			Node last = getLast();
-			last.setNext(newNode);
+			
+			Node lastNode = getLast();
+			T lastVal =  (T)lastNode.getVal();
+			
+			newNode.setVal(lastVal);
+			lastNode.setVal(val);
+			
+
+			//System.out.println(newNode.getVal() + " " + last.getVal() );
+			
+			lastNode.setNext(newNode);
 			
 		}else{
 			
@@ -198,7 +217,10 @@ public class LinkedList<T>{
 
 	}
 	
-	
+	/*
+	 * 	return object at index
+	 * 
+	 * */
 	public Object get(int index){
 		
 		Node curr = root;
