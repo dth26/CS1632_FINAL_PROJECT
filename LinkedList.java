@@ -3,17 +3,13 @@ public class LinkedList<T>{
 	
 	Node<T> root;
 	
-	 
-	
 	public static void main(String[]args){
 		LinkedList<String> list = new LinkedList<String>();
 		list.add("Dan");
 		list.add("Tyler");
 		list.add("Kevin");
 		list.printList();
-	}
-	
-	
+	} 
 	
 	public String printList(){
 		Node<T> curr = root;
@@ -28,20 +24,14 @@ public class LinkedList<T>{
 					result.append(" -> ");
 					System.out.print(" -> ");
 				}
-				
-					
 				curr = curr.getNext();
-				
 			}while(curr!=null);
 		}
-		
 		System.out.println();
 		System.out.println();
 		
 		return result.toString();
 	}
-	
-	
 	
 	public int size(){
 		Node<T> curr = root;
@@ -53,11 +43,8 @@ public class LinkedList<T>{
 				curr = curr.getNext();
 			}while(curr!=null);
 		}
-		
 		return size;
 	}
-	
-	
 	
 	public Node<T> getLast(){
 		Node<T> curr = root;
@@ -73,8 +60,6 @@ public class LinkedList<T>{
 		return last;
 	} 
 	
-
-	
 	public void add(Node<T> n){
 		if(root==null){
 			root = n;
@@ -83,8 +68,6 @@ public class LinkedList<T>{
 			curr.setNext(n);
 		}
 	}
-	
-	
 	
 	public void add(T val){
 		
@@ -96,8 +79,6 @@ public class LinkedList<T>{
 			curr.setNext(newNode);
 		}
 	}
-	
-	
 	
 	public void addFirst(T val){
 		Node newNode = new Node(val);
@@ -111,8 +92,6 @@ public class LinkedList<T>{
 		}
 	}
 	
-	
-	
 	public void addLast(T val){
 		Node newNode = new Node(val);
 		
@@ -122,34 +101,24 @@ public class LinkedList<T>{
 			Node last = getLast();
 			last.setNext(newNode);
 		}
-
 	}
-	
-	
 	
 	public int indexOf(T val){
 		int result = -1;
 		int index = 0;
 		Node curr = root;
-		
-		
 		if(curr!=null){
 			do{
-				
 				if(curr.getVal().equals(val)){
 					result = index;
 					break;
 				}
-						
 				curr = curr.getNext();
 				index++;
 			}while(curr!=null);
 		}
-		
 		return result;
 	}
-	
-	
 	
 	// Removes the first occurrence of the specified element in this list. 
 	public void remove(T val){
@@ -158,14 +127,11 @@ public class LinkedList<T>{
 		Node next = null;
 		
 		if(curr!=null){
-			
-			// check if element being removed is the first element
 			if(curr.getVal().equals(val)){
 				next = curr.getNext();
 				root = next;
 			}else{
 				do{
-					
 					if(curr.getVal().equals(val)){
 						next = curr.getNext();
 						prev.setNext(next);
@@ -187,68 +153,44 @@ public class LinkedList<T>{
 		if(index==0){
 			root = newNode;
 			root.setNext(next);
-		
-			
 		}else if( index==size()-1){
-			
-			
 			Node lastNode = getLast();
 			T lastVal =  (T)lastNode.getVal();
 			
 			newNode.setVal(lastVal);
 			lastNode.setVal(val);
-			
-
-			//System.out.println(newNode.getVal() + " " + last.getVal() );
-			
 			lastNode.setNext(newNode);
 			
 		}else{
-			
 			for(int i=0; i<index; i++){
 				before = next;
 				next = next.getNext();
 			}
-			
 			newNode.setNext(next);
 			before.setNext(newNode);
 		}
-		
-
 	}
 	
 	/*
 	 * 	return object at index
-	 * 
-	 * */
+	 */
 	public Object get(int index){
-		
 		Node curr = root;
 		Object name = null;
 		int i = 0;
 		int size = size();
 		
-		//System.out.println(index);
-		
 		if(index >= size || index < 0){
-			//System.out.println("outofbounds");
 			throw new IndexOutOfBoundsException();
 		}else{
-			
 			do{
 				name = curr.getVal();
 				curr = curr.getNext();
-				
 				i++;
-				
-			}while(i<=index);				
-		
+			}while(i<=index);	
 		}
-		
 		return name;
 	}
-	
-	
 	
 	public void clear(){
 		root = null;

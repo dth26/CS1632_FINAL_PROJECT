@@ -8,7 +8,7 @@ public class Node<T> {
 	 
 	public Node getNext(){
 		return next;
-	}
+	} 
 	
 	public boolean hasNext(){
 		return !(next==null);

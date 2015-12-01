@@ -4,15 +4,14 @@ public class CongaLine {
 	 
 	/*
 	 * 	Remove person from the conga line
-	 * */
+	 */
 	public void leave(String name){
 		line.remove(name);
 	} 
 	
-	
-	/*	Add a person to back of line
-	 * 
-	 * */
+	/*	
+	 * Add a person to back of line
+	 */
 	public void enter(String name){
 		line.addFirst(name);
 	}
@@ -20,7 +19,7 @@ public class CongaLine {
 	/*
 	 * 	Add a person to the conga line
 	 *  so that newPerson should now hold the hips of partner
-	 * */
+	 */ 
 	public boolean enterBehind(String newPerson, String partner){
 		boolean success;
 		
@@ -36,9 +35,7 @@ public class CongaLine {
 				line.addAtIndex(newPerson, positionOfpartner);
 			}
 		}
-		
 		return success;
-
 	}
 
 	
@@ -56,13 +53,12 @@ public class CongaLine {
 		}else{
 			partner = (String)line.get(positionOfPartner);
 		}
-		
 		return partner;
 	}
 	
 	/*
 	 * 	Print line
-	*/
+	 */
 	public String seeLine(){
 		String lineSequence = line.printList();
 		return lineSequence;
@@ -70,7 +66,7 @@ public class CongaLine {
 	
 	/*
 	 * 	Get number of people in conga line
-	 * */
+	 */
 	public int lineSize(){
 		return line.size();
 	}

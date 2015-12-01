@@ -506,7 +506,7 @@ public class testCongaLine {
 		assertTrue(lineSequence.contains("Shuqi -> Dan -> Charlotte"));
 	}
 	
-	
+	 
 	//---------------------
 	// TESTS FOR lineSize()
 	//---------------------

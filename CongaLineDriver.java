@@ -4,7 +4,7 @@ public class CongaLineDriver {
 	public static void main(String[]args){
 		 
 		CongaLine line = new CongaLine();
-		 
+		  
 		System.out.println("Dan Enters the Conga Line");
 		line.enter("Dan");
 		line.seeLine();
