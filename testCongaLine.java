@@ -524,16 +524,5 @@ public class testCongaLine {
 		int sizeOfLine = line.lineSize();
 		assertEquals(100, sizeOfLine);
 	}
-	
-	//---------------------
-	// CongaLineDriver.java
-	//---------------------
-	@Test
-	public void CongaLineDriver() { 
-    	CongaLineDriver line = new CongaLineDriver();
-    	String[]str = {};
-    	line.main(str);
-    	assertEquals(str.length, 0);
-    }
 }
 
