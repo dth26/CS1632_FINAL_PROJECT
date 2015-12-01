@@ -3,7 +3,7 @@ public class LinkedList<T>{
 	
 	Node<T> root;
 	
-	
+	 
 	
 	public static void main(String[]args){
 		LinkedList<String> list = new LinkedList<String>();
@@ -254,31 +254,4 @@ public class LinkedList<T>{
 		root = null;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

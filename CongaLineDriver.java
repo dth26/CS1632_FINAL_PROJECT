@@ -1,14 +1,14 @@
 
 public class CongaLineDriver {
-	
+	 
 	public static void main(String[]args){
-		
+		 
 		CongaLine line = new CongaLine();
-		
+		 
 		System.out.println("Dan Enters the Conga Line");
 		line.enter("Dan");
 		line.seeLine();
-		
+		 
 		System.out.println("Charlotte Enters the Conga Line");
 		line.enter("Charlotte");
 		line.seeLine();
@@ -36,6 +36,5 @@ public class CongaLineDriver {
 		line.leave("AJ");
 		line.leave("Ashley");
 		line.seeLine();
-		
 	}
 }

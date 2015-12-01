@@ -1,15 +1,13 @@
 
 public class CongaLine {
 	private LinkedList<String> line= new LinkedList<String>();
-	
-	
-	
+	 
 	/*
 	 * 	Remove person from the conga line
 	 * */
 	public void leave(String name){
 		line.remove(name);
-	}
+	} 
 	
 	
 	/*	Add a person to back of line

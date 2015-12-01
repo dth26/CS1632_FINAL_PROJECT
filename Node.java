@@ -1,4 +1,3 @@
-
 public class Node<T> {
 	private Node next;
 	private T val;
@@ -6,7 +5,7 @@ public class Node<T> {
 	public Node(T val){
 		this.val = val;
 	}
-	
+	 
 	public Node getNext(){
 		return next;
 	}
